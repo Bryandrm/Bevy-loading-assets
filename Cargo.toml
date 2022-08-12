@@ -1,0 +1,22 @@
+[package]
+name = "bevy-testing"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy={version ="0.8.0",features=["jpeg"]}
+bevy_dylib = { path = "crates/bevy_dylib", version = "0.7.0", default-features = false, optional = true }
+bevy_internal = { path = "crates/bevy_internal", version = "0.7.0", default-features = false }
+bevy_flycam = "*"
+
+[dev-dependencies]
+anyhow = "1.0.60"
+rand = "0.8.0"
+ron = "0.7.0"
+serde = { version = "1", features = ["derive"] }
+bytemuck = "1.7"
+# Needed to poll Task examples
+futures-lite = "1.11.3"
+crossbeam-channel = "0.5.0"
